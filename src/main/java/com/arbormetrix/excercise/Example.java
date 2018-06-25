@@ -41,7 +41,7 @@ public class Example {
 	        dob.setTime(sdf.parse(patient.getDob()));
 	        System.out.println("Age is:" + getAge(dob));
 	        int age = getAge(dob);
-	        patient.setDob(Integer.toString(age));
+	        patient.setAge(age);
 	        patientList.add(patient);
 	        patient.setState(new ExcerciseUtility().STATE_MAP.get(patient.getState()));
 	        patient.setGender((new ExcerciseUtility().GENDER_MAP.get(patient.getGender())));

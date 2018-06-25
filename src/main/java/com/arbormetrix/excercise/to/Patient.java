@@ -6,7 +6,20 @@ import javax.xml.bind.annotation.XmlRootElement;
 //@XmlRootElement
 public class Patient
 {
-    private String patientId;
+    public String getPatientId() {
+		return patientId;
+	}
+	public void setPatientId(String patientId) {
+		this.patientId = patientId;
+	}
+	public String getSex() {
+		return sex;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	private String patientId;
 
     private String name;
 
@@ -15,6 +28,7 @@ public class Patient
     private String state;
 
     private String sex;
+    private int age;
 
     public String getId ()
     {
@@ -71,5 +85,11 @@ public class Patient
     {
         return "ClassPojo [id = "+patientId+", name = "+name+", dob = "+dob+", state = "+state+", gender = "+sex+"]";
     }
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
 }
 		

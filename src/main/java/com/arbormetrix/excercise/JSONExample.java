@@ -48,22 +48,24 @@ public class JSONExample
 				SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
 		        Calendar dob = Calendar.getInstance();
 		        dob.setTime(sdf.parse(patient.getDob()));
-				patient.setDob(Integer.toString(ageCalculator.getAge(dob)));
+				patient.setAge((ageCalculator.getAge(dob)));
 				System.out.println("dob = "+patient.getDob());
 		        patient.setState(new ExcerciseUtility().STATE_MAP.get(patient.getState()));
-		        patient.setGender((new ExcerciseUtility().GENDER_MAP.get(patient.getGender())));
+		        patient.setSex((new ExcerciseUtility().GENDER_MAP.get(patient.getGender())));
+		        
 		        patientList.add(patient);
+		        
 
 				
 			}
 			patientList.toArray(patientArray);
 			patients.setPatient(patientArray);
 
-			String jsonInString = mapper.writeValueAsString(patients);
+			String jsonInString = mapper.writeValueAsString(patientArray);
 			//System.out.println(jsonInString);
 			
 			//Convert object to JSON string and pretty print
-			jsonInString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(patients);
+			jsonInString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(patientArray);
 			System.out.println(jsonInString);
 
 
