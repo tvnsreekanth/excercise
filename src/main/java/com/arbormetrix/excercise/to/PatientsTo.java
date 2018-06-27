@@ -1,19 +1,30 @@
 package com.arbormetrix.excercise.to;
 
-public class PatientsTo {
-	private Patients patients;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
-	public Patients getPatients() {
-		return patients;
-	}
+@XmlRootElement(name="patients")
+@XmlAccessorType(XmlAccessType.FIELD)
+public class PatientsTO
+{
+	@XmlElement(name="patient")
+    private PatientTO[] patient;
 
-	public void setPatients(Patients patients) {
-		this.patients = patients;
-	}
+    public PatientTO[] getPatient ()
+    {
+        return patient;
+    }
 
-	@Override
-	public String toString() {
-		return "ClassPojo [patients = " + patients + "]";
-	}
+    public void setPatient (PatientTO[] patient)
+    {
+        this.patient = patient;
+    }
 
+    @Override
+    public String toString()
+    {
+        return "ClassPojo [patient = "+patient+"]";
+    }
 }
